@@ -1,0 +1,421 @@
+/* Responsive Design */
+
+/* Large Desktop */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .hero-title {
+        font-size: 5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+}
+
+/* Desktop */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 100%;
+        padding: 0 30px;
+    }
+    
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .about-content {
+        gap: 3rem;
+    }
+    
+    .menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    /* Navigation */
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: rgba(54, 69, 79, 0.98);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 2rem 0;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-item {
+        margin: 1rem 0;
+    }
+    
+    .btn-reservation {
+        margin-top: 1rem;
+    }
+    
+    /* Hero Section */
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero-buttons .btn {
+        width: 200px;
+        margin-bottom: 1rem;
+    }
+    
+    /* About Section */
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .about-features {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .image-placeholder {
+        height: 300px;
+    }
+    
+    /* Menu Section */
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    /* Hours & Location */
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    /* Contact Section */
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contact-form {
+        padding: 2rem;
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    /* Typography */
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+    }
+    
+    /* Section Padding */
+    .about,
+    .featured-menu,
+    .hours-location,
+    .testimonials,
+    .contact {
+        padding: 60px 0;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* Navigation */
+    .nav-container {
+        height: 60px;
+    }
+    
+    .nav-logo h2 {
+        font-size: 1.2rem;
+    }
+    
+    .nav-menu {
+        top: 60px;
+    }
+    
+    /* Hero Section */
+    .hero {
+        height: 80vh;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-buttons .btn {
+        width: 180px;
+        padding: 10px 20px;
+        font-size: 0.8rem;
+    }
+    
+    /* About Section */
+    .about-features {
+        gap: 1rem;
+    }
+    
+    .feature i {
+        font-size: 2rem;
+    }
+    
+    .image-placeholder {
+        height: 250px;
+        font-size: 2rem;
+    }
+    
+    .image-placeholder p {
+        font-size: 1rem;
+    }
+    
+    /* Menu Section */
+    .menu-content {
+        padding: 1.5rem;
+    }
+    
+    .price {
+        font-size: 1.3rem;
+    }
+    
+    /* Hours & Location */
+    .info-card {
+        padding: 1.5rem;
+    }
+    
+    .info-card i {
+        font-size: 2.5rem;
+    }
+    
+    /* Contact Section */
+    .contact-form {
+        padding: 1.5rem;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .contact-item i {
+        width: auto;
+    }
+    
+    /* Testimonials */
+    .testimonial p {
+        font-size: 1.1rem;
+    }
+    
+    /* Typography */
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    h3 {
+        font-size: 1.3rem;
+    }
+    
+    p {
+        font-size: 1rem;
+    }
+    
+    /* Section Padding */
+    .about,
+    .featured-menu,
+    .hours-location,
+    .testimonials,
+    .contact {
+        padding: 40px 0;
+    }
+    
+    /* Buttons */
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 320px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .hero-buttons .btn {
+        width: 160px;
+        padding: 8px 16px;
+        font-size: 0.7rem;
+    }
+    
+    .container {
+        padding: 0 10px;
+    }
+    
+    .nav-logo h2 {
+        font-size: 1rem;
+    }
+    
+    .image-placeholder {
+        height: 200px;
+        font-size: 1.5rem;
+    }
+}
+
+/* Landscape Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        height: 100vh;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: row;
+        gap: 10px;
+    }
+    
+    .hero-buttons .btn {
+        width: auto;
+        margin-bottom: 0;
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .image-placeholder {
+        background-image: linear-gradient(135deg, var(--primary-brown), var(--secondary-gold));
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .hero-buttons,
+    .contact-form,
+    .footer {
+        display: none;
+    }
+    
+    .hero {
+        height: auto;
+        padding: 2rem 0;
+    }
+    
+    .about,
+    .featured-menu,
+    .hours-location,
+    .testimonials,
+    .contact {
+        padding: 1rem 0;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+    
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+    
+    .menu-item {
+        page-break-inside: avoid;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .hero {
+        background-attachment: scroll;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --neutral-cream: #2a2a2a;
+        --white: #1a1a1a;
+        --neutral-charcoal: #e0e0e0;
+    }
+    
+    body {
+        background-color: var(--white);
+        color: var(--neutral-charcoal);
+    }
+    
+    .featured-menu,
+    .contact {
+        background-color: var(--neutral-cream);
+    }
+    
+    .about {
+        background-color: var(--white);
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        background-color: var(--neutral-cream);
+        color: var(--neutral-charcoal);
+        border-color: #444;
+    }
+} 
