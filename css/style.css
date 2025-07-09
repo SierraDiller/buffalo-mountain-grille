@@ -152,18 +152,7 @@ p {
     color: var(--secondary-gold);
 }
 
-.btn-reservation {
-    background-color: var(--secondary-gold);
-    color: var(--black);
-    padding: 8px 20px;
-    border-radius: 25px;
-    font-weight: 600;
-}
 
-.btn-reservation:hover {
-    background-color: #B8860B;
-    color: var(--white);
-}
 
 .hamburger {
     display: none;

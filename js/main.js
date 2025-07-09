@@ -245,27 +245,7 @@ function lazyLoadImages() {
 // Initialize lazy loading
 lazyLoadImages();
 
-// Reservation System (Demo)
-function handleReservation() {
-    const reservationData = {
-        date: new Date().toISOString().split('T')[0],
-        time: '19:00',
-        guests: 2,
-        name: 'Demo User',
-        email: 'demo@example.com',
-        phone: '(555) 123-4567'
-    };
-    
-    showNotification(`Reservation confirmed for ${reservationData.date} at ${reservationData.time} for ${reservationData.guests} guests!`, 'success');
-}
 
-// Add click handlers for reservation buttons
-document.querySelectorAll('a[href="#reservations"]').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        handleReservation();
-    });
-});
 
 // Performance optimization: Debounce scroll events
 function debounce(func, wait) {
