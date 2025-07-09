@@ -49,11 +49,13 @@ p {
 :root {
     --primary-brown: #8B4513;
     --secondary-gold: #DAA520;
-    --accent-green: #228B22;
-    --neutral-cream: #F5F5DC;
-    --neutral-charcoal: #36454F;
+    --accent-red: #A0522D;
+    --warm-cream: #F5F5DC;
+    --deep-brown: #654321;
+    --charcoal: #36454F;
     --white: #FFFFFF;
     --black: #000000;
+    --wood-texture: #8B7355;
 }
 
 /* Buttons */
@@ -72,26 +74,34 @@ p {
 }
 
 .btn-primary {
-    background-color: var(--primary-brown);
+    background: linear-gradient(135deg, var(--primary-brown), var(--deep-brown));
     color: var(--white);
+    border: 2px solid var(--primary-brown);
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+    font-family: 'Crimson Text', serif;
+    font-weight: 600;
 }
 
 .btn-primary:hover {
-    background-color: #6B3410;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+    background: linear-gradient(135deg, var(--deep-brown), var(--primary-brown));
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
 }
 
 .btn-secondary {
-    background-color: transparent;
+    background: transparent;
     color: var(--white);
-    border: 2px solid var(--white);
+    border: 3px solid var(--white);
+    font-family: 'Crimson Text', serif;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
 }
 
 .btn-secondary:hover {
-    background-color: var(--white);
+    background: var(--white);
     color: var(--primary-brown);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
 }
 
 /* Navigation */
@@ -172,8 +182,8 @@ p {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect width="1200" height="800" fill="%238B4513"/><polygon points="0,800 300,600 600,700 900,500 1200,600 1200,800" fill="%23228B22"/><polygon points="0,800 200,650 400,750 600,600 800,700 1000,550 1200,650 1200,800" fill="%23DAA520"/></svg>');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect width="1200" height="800" fill="%238B4513"/><polygon points="0,800 300,600 600,700 900,500 1200,600 1200,800" fill="%23228B22"/><polygon points="0,800 200,650 400,750 600,600 800,700 1000,550 1200,650 1200,800" fill="%23DAA520"/><circle cx="600" cy="200" r="50" fill="%23FFD700"/></svg>');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -181,6 +191,18 @@ p {
     justify-content: center;
     text-align: center;
     color: var(--white);
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(139, 69, 19, 0.3), rgba(160, 82, 45, 0.3));
+    z-index: 1;
 }
 
 .hero-overlay {
@@ -188,17 +210,29 @@ p {
     padding: 0 20px;
 }
 
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
 .hero-title {
-    font-size: 4rem;
+    font-family: 'Crimson Text', serif;
+    font-size: 4.5rem;
+    font-weight: 700;
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
     color: var(--white) !important;
+    letter-spacing: 2px;
 }
 
 .hero-subtitle {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
     font-weight: 300;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-buttons {
@@ -215,8 +249,10 @@ p {
 }
 
 .section-header h2 {
+    font-family: 'Crimson Text', serif;
     color: var(--primary-brown);
     margin-bottom: 1rem;
+    font-weight: 600;
 }
 
 .section-header p {
@@ -238,8 +274,10 @@ p {
 }
 
 .about-text h3 {
+    font-family: 'Crimson Text', serif;
     color: var(--primary-brown);
     margin-bottom: 1rem;
+    font-weight: 600;
 }
 
 .about-features {
@@ -260,8 +298,10 @@ p {
 }
 
 .feature h4 {
+    font-family: 'Crimson Text', serif;
     color: var(--primary-brown);
     margin-bottom: 0.5rem;
+    font-weight: 600;
 }
 
 .about-image {
@@ -302,15 +342,28 @@ p {
 }
 
 .menu-item {
-    background-color: var(--neutral-cream);
+    background: linear-gradient(135deg, var(--warm-cream), #E8E4D9);
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+    border: 2px solid var(--primary-brown);
+    position: relative;
+}
+
+.menu-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-brown), var(--accent-red));
 }
 
 .menu-item:hover {
-    transform: translateY(-10px);
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
 }
 
 .menu-image {
@@ -329,16 +382,20 @@ p {
 }
 
 .menu-content h3 {
-    color: var(--primary-brown);
+    font-family: 'Crimson Text', serif;
+    color: var(--deep-brown);
     margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+    font-weight: 600;
 }
 
 .price {
-    display: block;
-    font-size: 1.5rem;
+    font-family: 'Crimson Text', serif;
+    font-size: 1.8rem;
     font-weight: 700;
-    color: var(--secondary-gold);
+    color: var(--accent-red);
     margin-top: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .menu-cta {
@@ -592,6 +649,53 @@ html {
     }
 }
 
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 .fade-in-up {
-    animation: fadeInUp 0.6s ease-out;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.slide-in-left {
+    animation: slideInFromLeft 0.8s ease-out;
+}
+
+.slide-in-right {
+    animation: slideInFromRight 0.8s ease-out;
+}
+
+/* Enhanced hover effects */
+.menu-item:hover .menu-content h3 {
+    color: var(--accent-red);
+    transition: color 0.3s ease;
+}
+
+.feature:hover i {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 } 

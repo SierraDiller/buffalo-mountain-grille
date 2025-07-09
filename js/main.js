@@ -217,9 +217,11 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.menu-item, .feature, .info-card');
-    animateElements.forEach(el => {
+    const animateElements = document.querySelectorAll('.menu-item, .feature, .info-card, .about-text, .about-image');
+    animateElements.forEach((el, index) => {
         observer.observe(el);
+        // Add staggered animation delays
+        el.style.animationDelay = `${index * 0.1}s`;
     });
 });
 
