@@ -13,46 +13,7 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', 
     navMenu.classList.remove('active');
 }));
 
-// Testimonial Carousel
-let currentSlide = 0;
-const testimonials = document.querySelectorAll('.testimonial');
-const dots = document.querySelectorAll('.dot');
 
-function showSlide(n) {
-    // Hide all testimonials
-    testimonials.forEach(testimonial => {
-        testimonial.classList.remove('active');
-    });
-    
-    // Remove active class from all dots
-    dots.forEach(dot => {
-        dot.classList.remove('active');
-    });
-    
-    // Show current testimonial and activate corresponding dot
-    if (testimonials[n]) {
-        testimonials[n].classList.add('active');
-    }
-    if (dots[n]) {
-        dots[n].classList.add('active');
-    }
-}
-
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % testimonials.length;
-    showSlide(currentSlide);
-}
-
-function currentSlideFunction(n) {
-    currentSlide = n;
-    showSlide(currentSlide);
-}
-
-// Auto-advance testimonials every 5 seconds
-setInterval(nextSlide, 5000);
-
-// Initialize first slide
-showSlide(0);
 
 // Smooth Scrolling for Navigation Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
